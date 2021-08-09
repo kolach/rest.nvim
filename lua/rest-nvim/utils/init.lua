@@ -201,7 +201,7 @@ M.encode_url = function(url)
 
     url = url:gsub('\n', '\r\n')
     -- Encode characters but exclude `.`, `_`, `-`, `:`, `/`, `?`, `&`, `=`, `~`, `$`, `(`, `)`, `%`
-    url = string.gsub(url, '([^%w _ %- . : / ? & = ~ $ ( ) %])', M.char_to_hex)
+    url = string.gsub(url, '([^%w _ %- . : / ? & = ~ $ ( ) %%])', M.char_to_hex)
     url = url:gsub(' ', '+')
     return url
 end
